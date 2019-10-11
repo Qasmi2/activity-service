@@ -1,0 +1,22 @@
+{
+  "name": "activity-service",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "author": "Nadeem Qasmi",
+  "license": "ISC",
+  "dependencies": {
+    "cookie-parser": "^1.4.4",
+    "eslint": "^6.5.1",
+    "express": "^4.17.1",
+    "pg": "^7.12.1",
+    "pg-hstore": "^2.3.3",
+    "sequelize": "^5.19.5"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.3"
+  }
+}
