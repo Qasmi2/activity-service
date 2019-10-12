@@ -1,7 +1,7 @@
 var express = require('express')
 var cookieParser = require('cookie-parser');
 
-var activityRoutes = './src/interface/activityRoutes'
+var activityRoutes = './src/interface/import_routes'
 // create express app @ express app just for testing 
 const app = express()
 
@@ -11,7 +11,7 @@ app.use(cookieParser());
 
 require(activityRoutes)(app);
 
-// not found 
+
 app.use((req,res)=>{
     res.status(404).send({url:req.originalUrl + 'Not found'})
 });

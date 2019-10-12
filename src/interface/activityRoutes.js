@@ -6,7 +6,7 @@ const activity = new Activity();
 
 /** require activty Controller  */
 
-router.post('/api/add_activity',(req,res)=>{
+router.post('/add_activity',(req,res)=>{
     let body = req.body;
 
     console.log("body ",body);

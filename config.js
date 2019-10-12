@@ -10,12 +10,5 @@ module.exports = {
             password: process.env.database_password || 'server',
             database: process.env.database || 'school_register',
         },
-        // local = {
-        //     user: 'postgres', //this is the db user credential
-        //     database: 'school_register',
-        //     password: 'hook',
-        //     port: 5432,
-        //     max: 10, // max number of clients in the pool
-        //     idleTimeoutMillis: 30000,
-        //   },
+ 
 }

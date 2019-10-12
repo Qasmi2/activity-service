@@ -1,15 +1,19 @@
-let { ActivityClassModel }  = require('../domain/Models/activity');
-module.exports = class ActivityController{
+let { ActivityModel }  = require('../domain/index');
+
+class ActivityController{
 
     /**
      * Add activty 
      * @param {Activity_body} 
      * @retrun <boolean>
      */
+
     addActivity(body){
-        console.log("body controller",body);
-        let activity = new ActivityClassModel(body);        
+       
+        let activity_constructor = new ActivityModel(body);
+
     }
 
-
 }
+
+module.exports = ActivityController ;
