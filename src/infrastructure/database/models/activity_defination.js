@@ -1,7 +1,7 @@
 
 const ActivityTable = ` CREATE TABLE IF NOT EXISTS
     Activity(
-        id bigserial NOT NULL,
+        id bigserial PRIMARY KEY,
         title text,
         description text,
         location character varying(255),
@@ -33,9 +33,8 @@ const ActivityTable = ` CREATE TABLE IF NOT EXISTS
         event_id text,
         is_active boolean DEFAULT false,
         review_assigned_to text,
-        service_originated_from text,
-        CONSTRAINT "Activity_pkey" PRIMARY KEY (id)
-    )`;
+        service_originated_from text
+    )` ;
 
     module.exports = {
         ActivityTable,

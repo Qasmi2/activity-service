@@ -9,7 +9,7 @@ const activity = new Activity();
 router.post('/add_activity',(req,res)=>{
     let body = req.body;
     let re = activity.addActivity(body)
-    res.json({re});
+    res.json({"success":true});
 
 });
 
