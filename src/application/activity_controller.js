@@ -1,4 +1,6 @@
 let { ActivityModel }  = require('../domain/index');
+let ActivityRepository  = require('../infrastructure/repositories/activity')
+
 
 class ActivityController{
 
@@ -10,7 +12,13 @@ class ActivityController{
 
     addActivity(body){
        
-        let activity_constructor = new ActivityModel(body);
+        console.log("controller");
+        let model = new ActivityModel(body);
+        console.log(model);
+        let res = ActivityRepository.createAcitity(model)
+        return res;
+        
+       
 
     }
 

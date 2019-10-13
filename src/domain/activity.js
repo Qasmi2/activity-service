@@ -31,6 +31,7 @@ class ActivityClassModel{
         this.source = obj.source;
         this.event_id = obj.event_id;
         this.added_date = obj.event_date;
+        this.is_active = obj.is_active;
         this.review_assigned_to = obj.review_assigned_to;
         this.service_originated_from = obj.service_originated_from;
         this.company = obj.company;
