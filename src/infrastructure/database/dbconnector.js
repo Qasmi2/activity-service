@@ -15,6 +15,16 @@ const config = {
 
 }
 
+// const config = {
+//     schema : options.databaseRemote.schema,
+//     database: options.databaseRemote.database,
+//     user:options.databaseRemote.username,
+//     password : options.databaseRemote.password,
+//     host:options.databaseRemote.host,
+//     dialect : options.databaseRemote.dialect,
+
+// }
+
 const pool = new pg.Pool(config);
 pool.on('connect',() => {
         console.log('Database to the connected');
@@ -24,15 +34,15 @@ pool.on('connect',() => {
  * create Tables if not exist  
  */
 
-// pool.query(createActivityTable.ActivityTable)
-//     .then((res)=>{
-//         console.log("Activity Table Creation ",res);
-//         pool.end();
-//     })
-//     .catch((err)=>{
-//         console.log("Error Creation Activity Table ",err);
-//         pool.end();
-//     });
+pool.query(createActivityTable.ActivityTable)
+    .then((res)=>{
+        console.log("Activity Table Creation ",res);
+        pool.end();
+    })
+    .catch((err)=>{
+        console.log("Error Creation Activity Table ",err);
+        pool.end();
+    });
 
 
 module.exports = {
