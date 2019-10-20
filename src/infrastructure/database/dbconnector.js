@@ -1,7 +1,6 @@
 // Database connection 
 const createActivityTable = require('./models/activity_defination');
-require('make-runnable');
-const pg = require('pg');
+const { Pool } = require('pg');
 const options = require('../../config')
 
 const config = {
@@ -10,12 +9,13 @@ const config = {
     database : options.database.database,
     password : options.database.password,
     port : options.database.port,
+    schema : options.database.schema,
     idleTimeoutMillis: 30000,
     host : options.host,
 
 }
 
-const pool = new pg.Pool(config);
+const pool = new Pool(config);
 pool.on('connect')
     .then((db)=>{
         Console.log('Database to the connected');
@@ -30,7 +30,7 @@ pool.on('connect')
 
 pool.query(createActivityTable)
     .then((res)=>{
-        console.log("Activity Table Creation ",res);
+        console.log("Activity Table Creation ");
     })
     .catch((err)=>{
         console.log("Error Creation Activity Table ",err);

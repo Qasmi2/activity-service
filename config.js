@@ -1,5 +1,4 @@
 
-
 module.exports = {
 
         database : {
@@ -9,6 +8,8 @@ module.exports = {
             username: process.env.database_username || 'hook' ,
             password: process.env.database_password || 'hook',
             database: process.env.database || 'youcan',
+            schema : process.env.schema || 'activityservice'
+
         },
  
 }

@@ -1,5 +1,6 @@
-let { ActivityModel }  = require('../domain/index');
-let ActivityRepository  = require('../infrastructure/repositories/activity')
+const { ActivityModel } = require('../domain/index');
+const PgUtility = require('../domain/utility/utility_pg');
+//let ActivityRepository  = require('../infrastructure/repositories/activity')
 
 
 class ActivityController{
@@ -10,13 +11,19 @@ class ActivityController{
      * @retrun <boolean>
      */
 
-    addActivity(body){
+    create_activity(body){
        
-        console.log("controller");
-        let model = new ActivityModel(body);
-        console.log(model);
-        let res = ActivityRepository.createAcitity(model)
-        return res;
+        const model = new ActivityModel(body.arr);
+        const pgUtility = new PgUtility(model);
+        const get_column = pgUtility.get_column();
+        const get_value = pgUtility.get_value();
+        if(get_column){
+            return 
+        }
+        console.log("get cloumn is :--->controller ",get_column);
+        console.log("get value --- >controller",get_value);
+        // let res = ActivityRepository.createAcitity(model)
+         return { "successful":"crate_actiivty"};
         
        
 
